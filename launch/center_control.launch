@@ -1,0 +1,29 @@
+<launch>
+  <!-- Run every available center_control C++ node together -->
+
+  <node
+    pkg="center_control"
+    type="topic_control_node"
+    name="topic_control_node"
+    output="screen" />
+
+  <node
+    pkg="center_control"
+    type="mission_control_node"
+    name="mission_control_node"
+    output="screen" />
+
+  <node
+    pkg="center_control"
+    type="cmd_control_node"
+    name="cmd_control_node"
+    output="screen">
+    <rosparam command="load" file="$(find center_control)/config/param.yaml" />
+  </node>
+
+  <node
+    pkg="center_control"
+    type="debug_log_node"
+    name="debug_log_node"
+    output="screen" />
+</launch>

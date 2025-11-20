@@ -4,6 +4,7 @@
 #include <coss_msgs/Coss.h>
 #include <ackermann_msgs/AckermannDriveStamped.h>
 #include <nav_msgs/Odometry.h>
+#include <std_msgs/Float64.h>
 
 using namespace std;
 
@@ -17,7 +18,7 @@ private:
 
     //ros subscribers
     ros::Subscriber cmd_goal_sub_;
-    ros::Subscriber odom_sub_;
+    ros::Subscriber servo_sub_;
 
     //ros publishers
     ros::Publisher final_cmd_pub_;

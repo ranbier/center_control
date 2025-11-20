@@ -1,5 +1,6 @@
 #include <ros/ros.h>
 #include <ackermann_msgs/AckermannDriveStamped.h>
+#include <coss_msgs/Coss.h>
 
 class DebugLogNode {
 public:
@@ -21,14 +22,14 @@ private:
 	ros::Subscriber lidar_mission_sub_;
 	ros::Subscriber camera_mission_sub_;
 
-	double goal_steer_;
-	double goal_speed_;
-	double lidar_steer_;
-	double lidar_speed_;
-	int lidar_stop_flag_;
-	double cam_steer_;
-	double cam_speed_;
-	int mission_state_;
+	double goal_steer_ = 0.0;
+	double goal_speed_ = 0.0;
+	double lidar_steer_ = 0.0;
+	double lidar_speed_ = 0.0;
+	int lidar_stop_flag_ = 0;
+	double cam_steer_ = 0.0;
+	double cam_speed_ = 0.0;
+	int mission_state_ = 0;
 
 	void CmdCallback(const ackermann_msgs::AckermannDriveStamped::ConstPtr& msg) {
 		goal_steer_ = msg->drive.steering_angle;

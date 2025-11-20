@@ -1,4 +1,4 @@
-#include <mission_control_node.cpp>
+#include "mission_control.hpp"
 
 void MissionControl::Process() {
     double steer_command;   //rad

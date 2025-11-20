@@ -26,6 +26,9 @@ private:
     double Kp_;
     double Ki_;
     double Kd_;
+    double steering_angle_to_servo_gain_;
+    double steering_angle_to_servo_offset_;
+    double current_steering_angle_;
     double integral_{0.0};
     double previous_error_{0.0};
 
@@ -35,6 +38,6 @@ private:
     double PIDControl(double target, double current, double& integral, double& previous_error, double dt);
 
     void CmdGoalCallback(const ackermann_msgs::AckermannDriveStamped::ConstPtr& msg);
-    void OdomCallback(const nav_msgs::Odometry::ConstPtr& msg);
+    void ServoCallback(const std_msgs::Float64::ConstPtr& msg);
 };
 

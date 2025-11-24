@@ -23,13 +23,22 @@ private:
     ros::Publisher cmd_goal_pub_;    
     
 
-    bool lidar_stop_flag_{false};
+    bool lidar_flag_{false};
     double lidar_steer = 0.0;
     double lidar_speed = 0.0;
 
     int mission_state = 0;
     double cam_steer = 0.0;
     double cam_speed = 0.0;
+    bool cone_finish = false;
+    bool tunnel_finish = false;
+    bool cam_red_detection = false;
+    bool cam_blue_detection = false;
+
+    /*Legend of COUNT*/
+    int count_cone = 0;
+    int count_cone2 = 0;
+    int count_parking = 0;
 
     void LidarCallback(const coss_msgs::Coss::ConstPtr& msg);
 

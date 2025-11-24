@@ -13,7 +13,7 @@ public:
 		ROS_INFO("------------------ Debug Log ------------------");
 		ROS_INFO("goal -> steer: %f, speed: %f\nlidar -> steer: %f, speed: %f, stop_flag: %d\ncamera -> steer: %f, speed: %f, state: %d\n\n", 
 			goal_steer_, goal_speed_,
-			lidar_steer_, lidar_speed_, lidar_stop_flag_,
+			lidar_steer_, lidar_speed_, lidar_flag_,
 			cam_steer_, cam_speed_, mission_state_);
 	}
 
@@ -26,7 +26,7 @@ private:
 	double goal_speed_ = 0.0;
 	double lidar_steer_ = 0.0;
 	double lidar_speed_ = 0.0;
-	int lidar_stop_flag_ = 0;
+	int lidar_flag_ = 0;
 	double cam_steer_ = 0.0;
 	double cam_speed_ = 0.0;
 	int mission_state_ = 0;
@@ -41,7 +41,7 @@ private:
 	void LidarMissionCallback(const coss_msgs::Coss::ConstPtr& msg) {
 		lidar_steer_ = msg->lidar_steer;
 		lidar_speed_ = msg->lidar_speed;
-		lidar_stop_flag_ = msg->lidar_stop_flag;
+		lidar_flag_ = msg->lidar_flag;
 
 	}
 	void CameraMissionCallback(const coss_msgs::Coss::ConstPtr& msg) {

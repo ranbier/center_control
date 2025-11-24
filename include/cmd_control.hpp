@@ -29,12 +29,10 @@ private:
     double Kd_;
     double steering_angle_to_servo_gain_;
     double steering_angle_to_servo_offset_;
-    double current_steering_angle_;
+    double current_steering_angle_{0.0};
     double integral_{0.0};
     double previous_error_{0.0};
-
-    // odometry variables
-    double current_speed_;
+    ros::Time last_cmd_time_;
 
     double PIDControl(double target, double current, double& integral, double& previous_error, double dt);
 

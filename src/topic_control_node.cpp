@@ -42,12 +42,16 @@ private:
 	void LidarCallback(const coss_msgs::Coss::ConstPtr& msg) {
 		double lidar_steer = msg->lidar_steer;
 		double lidar_speed = msg->lidar_speed;
-		double lidar_stop_flag = msg->lidar_stop_flag;
+		double lidar_flag = msg->lidar_flag;
+		bool cone_finish = msg->cone_finish;
+		bool tunnel_finish = msg->tunnel_finish;
 
 		coss_msgs::Coss lidar_msg;
 		lidar_msg.lidar_steer = lidar_steer;
 		lidar_msg.lidar_speed = lidar_speed;
-		lidar_msg.lidar_stop_flag = lidar_stop_flag;
+		lidar_msg.lidar_flag = lidar_flag;
+		lidar_msg.cone_finish = cone_finish;
+		lidar_msg.tunnel_finish = tunnel_finish;
 
 		lidar_to_mission_pub_.publish(lidar_msg);
 	}
@@ -56,11 +60,15 @@ private:
 		double cam_steer = msg->cam_steer;
 		double cam_speed = msg->cam_speed;
 		int mission_state = msg->mission_state;
+		bool cam_red_detection = msg->cam_red_detection;
+		bool cam_blue_detection = msg->cam_blue_detection;
 
 		coss_msgs::Coss camera_msg;
 		camera_msg.cam_steer = cam_steer;
 		camera_msg.cam_speed = cam_speed;
 		camera_msg.mission_state = mission_state;
+		camera_msg.cam_red_detection = cam_red_detection;
+		camera_msg.cam_blue_detection = cam_blue_detection;
 
 		camera_to_mission_pub_.publish(camera_msg);
 	}

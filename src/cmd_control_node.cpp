@@ -1,3 +1,5 @@
+#include <algorithm>
+
 #include "cmd_control.hpp"
 
 
@@ -12,6 +14,8 @@ CmdControl::CmdControl(ros::NodeHandle& nh) : nh_(nh) {
     //topic subscriptions
     cmd_goal_sub_ = nh_.subscribe("/cmd_goal", 10, &CmdControl::CmdGoalCallback, this);
     servo_sub_ = nh_.subscribe("/sensors/servo_position_command", 10, &CmdControl::ServoCallback, this);
+    last_cmd_time_ = ros::Time::now();
+
     //topic publications
     final_cmd_pub_ = nh_.advertise<ackermann_msgs::AckermannDriveStamped>("/high_level/ackermann_cmd_mux/input/nav_0", 10);
 }
@@ -38,16 +42,21 @@ void CmdControl::CmdGoalCallback(const ackermann_msgs::AckermannDriveStamped::Co
     double steer_command = msg->drive.steering_angle;  
     double speed_command = msg->drive.speed;
 
-    
+    ros::Time now = ros::Time::now();
+    double dt = last_cmd_time_.isZero() ? 0.0 : (now - last_cmd_time_).toSec();
+    last_cmd_time_ = now;
+    if (dt <= 0.0) {
+        dt = 0.1;  // fallback to reasonable loop interval
+    }
+
+    double correction = PIDControl(steer_command, current_steering_angle_, integral_, previous_error_, dt);
+    double corrected_angle = steer_command + correction;
+    corrected_angle = std::max(-0.27, std::min(0.31, corrected_angle));
 
     // Create and publish the AckermannDriveStamped message
     ackermann_msgs::AckermannDriveStamped cmd_msg;
-    cmd_msg.drive.steering_angle = PIDControl(steer_command, current_steering_angle_, integral_, previous_error_, 0.1);
-    if (cmd_msg.drive.steering_angle > 0.31) {
-        cmd_msg.drive.steering_angle = 0.31;
-    } else if (cmd_msg.drive.steering_angle < -0.27) {
-        cmd_msg.drive.steering_angle = -0.27;
-    }
+    //cmd_msg.drive.steering_angle = corrected_angle;
+    cmd_msg.drive.steering_angle = steer_command;
     cmd_msg.drive.speed = speed_command;
     final_cmd_pub_.publish(cmd_msg);
 }

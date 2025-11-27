@@ -2,4 +2,74 @@ Kp: 1.0
 Ki: 0.0
 Kd: 0.1
 steering_angle_to_servo_gain: -1.2135
-steering_angle_to_servo_offset: 0.5304
+steering_angle_to_servo_offset: 0.5
+
+
+# + 좌회전 - 우회전
+## 주차 구간 파라미터
+# 정지
+steer1: 0.0
+speed1: 0.0
+count1: 5
+#오른쪽 조향하고 전진
+steer2: -0.3
+speed2: 0.3
+count2: 12
+#왼쪽 조향하고 후진
+steer3: 0.3
+speed3: -0.3
+count3: 23
+#후진
+steer4: 0.0
+speed4: -0.3
+count4: 37
+#정지
+steer5: 0.0
+speed5: 0.0
+count5: 67
+#직진
+steer6: 0.0
+speed6: 0.3
+count6: 76
+#왼쪽 조향하고 전진
+steer7: 0.3
+speed7: 0.3
+count7: 91
+#직진
+steer11: 0.0
+speed11: 0.3
+count11: 106
+#정지
+steer12: 0.0
+speed12: 0.3
+count12: 116
+
+steer13: 0.0
+speed13: 0.3
+count13: 0
+
+steer14: 0.0
+speed14: 0.3
+count14: 0
+
+steer15: 0.0
+speed15: 0.3
+count15: 0
+
+# 프로세스 파라미터
+# case 0, 1, 4, 5, 6, 8, 9
+steer8: 0.0
+speed8: 0.3
+count8: 30 #count_cone
+# case 3, 7
+steer9: 0.0
+speed9: 0.3
+count9: 25 #count_cone2
+
+
+# 밀어주는 구간
+steer10: 0.0
+speed10: 0.3
+count10: 0
+
+#

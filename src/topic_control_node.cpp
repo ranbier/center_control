@@ -45,6 +45,7 @@ private:
 		double lidar_flag = msg->lidar_flag;
 		bool cone_finish = msg->cone_finish;
 		bool tunnel_finish = msg->tunnel_finish;
+		bool parking_flag = msg->parking_flag;
 
 		coss_msgs::Coss lidar_msg;
 		lidar_msg.lidar_steer = lidar_steer;
@@ -52,6 +53,7 @@ private:
 		lidar_msg.lidar_flag = lidar_flag;
 		lidar_msg.cone_finish = cone_finish;
 		lidar_msg.tunnel_finish = tunnel_finish;
+		lidar_msg.parking_flag = parking_flag;
 
 		lidar_to_mission_pub_.publish(lidar_msg);
 	}

@@ -63,7 +63,7 @@ void CmdControl::CmdGoalCallback(const ackermann_msgs::AckermannDriveStamped::Co
 
 int main(int argc, char** argv) {
     ros::init(argc, argv, "cmd_control_node");
-    ros::NodeHandle nh;
+    ros::NodeHandle nh("~");
 
     CmdControl cmd_control(nh);
     ros::spin();

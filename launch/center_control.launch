@@ -11,7 +11,9 @@
     pkg="center_control"
     type="mission_control_node"
     name="mission_control_node"
-    output="screen" />
+    output="screen">
+    <rosparam command="load" file="$(find center_control)/config/param.yaml" />
+  </node>
 
   <node
     pkg="center_control"

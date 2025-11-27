@@ -242,7 +242,7 @@ void MissionControl::Process() {
         case 12:
             if(keep_parking && !parking_once2) {
                 keep_parking = false;
-                parking_once1 = true;
+                parking_once2 = true;
                 count_parking = 0;
             }
             if (parking_flag) {
@@ -307,7 +307,7 @@ void MissionControl::Process() {
         case 13:
             if(keep_parking && !parking_once3) {
                 keep_parking = false;
-                parking_once1 = true;
+                parking_once3 = true;
                 count_parking = 0;
             }
             if (parking_flag) {
@@ -372,7 +372,7 @@ void MissionControl::Process() {
         case 14:
             if(keep_parking && !parking_once4) {
                 keep_parking = false;
-                parking_once1 = true;
+                parking_once4 = true;
                 count_parking = 0;
             }
             if (parking_flag) {
@@ -437,7 +437,7 @@ void MissionControl::Process() {
         case 15:
             if(keep_parking && !parking_once5) {
                 keep_parking = false;
-                parking_once1 = true;
+                parking_once5 = true;
                 count_parking = 0;
             }
             if (parking_flag) {
@@ -502,7 +502,7 @@ void MissionControl::Process() {
         case 16:
             if(keep_parking && !parking_once6) {
                 keep_parking = false;
-                parking_once1 = true;
+                parking_once6 = true;
                 count_parking = 0;
             }
             if (parking_flag) {
@@ -568,7 +568,7 @@ void MissionControl::Process() {
         case 17:
             if(keep_parking && !parking_once7) {
                 keep_parking = false;
-                parking_once1 = true;
+                parking_once6 = true;
                 count_parking = 0;
             }
             if (parking_flag) {
@@ -633,7 +633,7 @@ void MissionControl::Process() {
         case 18:
             if(keep_parking && !parking_once8) {
                 keep_parking = false;
-                parking_once1 = true;
+                parking_once8 = true;
                 count_parking = 0;
             }
             if (parking_flag) {
@@ -698,7 +698,7 @@ void MissionControl::Process() {
         case 19:
             if(keep_parking && !parking_once9) {
                 keep_parking = false;
-                parking_once1 = true;
+                parking_once9 = true;
                 count_parking = 0;
             }
             if (parking_flag) {
@@ -763,7 +763,7 @@ void MissionControl::Process() {
         case 20:
             if(keep_parking && !parking_once10) {
                 keep_parking = false;
-                parking_once1 = true;
+                parking_once10 = true;
                 count_parking = 0;
             }
             if (parking_flag) {

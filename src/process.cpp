@@ -123,7 +123,7 @@ void MissionControl::Process() {
             }
             else {
                 // steer_command = cam_steer;
-                steer_command = -0.03;
+                steer_command = -0.03; // 카메라로 바꾸기
                 speed_command = speed8;
             }
             if (keep_parking) {
@@ -175,6 +175,656 @@ void MissionControl::Process() {
             
             break;
         case 11:
+            if(keep_parking && !parking_once1) {
+                keep_parking = false;
+                parking_once1 = true;
+                count_parking = 0;
+            }
+            if (parking_flag) {
+                if (!keep_parking) {
+                
+                    keep_parking = true;
+                }
+            }
+            else {
+                // steer_command = cam_steer;
+                steer_command = -0.03;
+                speed_command = speed8;
+            }
+            if (keep_parking) {
+                if (count_parking < count1) {      // 피팅 필요
+                    steer_command = steer1;
+                    speed_command = speed1;
+                    count_parking++;
+                } else if (count_parking >= count1 && count_parking < count2) {
+                    steer_command = steer2;
+                    speed_command = speed2;
+                    count_parking++;
+                } else if (count_parking >= count2 && count_parking < count3) {
+                    steer_command = steer3;
+                    speed_command = speed3;
+                    count_parking++;
+                } else if (count_parking >= count3 && count_parking < count4) {
+                    steer_command = steer4;
+                    speed_command = speed4;
+                    count_parking++;
+                }
+                else if (count_parking >= count4 && count_parking < count5) {
+                    steer_command = steer5;
+                    speed_command = speed5;
+                    count_parking++;
+                }
+                else if (count_parking >= count5 && count_parking < count6) {
+                    steer_command = steer6;
+                    speed_command = speed6;
+                    count_parking++;
+                }
+                else if (count_parking >= count6 && count_parking < count7) {
+                    steer_command = steer7;
+                    speed_command = speed7;
+                }
+                else if (count_parking >= count7 && count_parking < count11) {
+                    steer_command = steer11;
+                    speed_command = speed11;
+                    count_parking++;
+                }
+                else if (count_parking >= count11 && count_parking < count12) {
+                    steer_command = steer12;
+                    speed_command = speed12;
+                    count_parking++;
+                }
+                
+                
+            }
+            
+            
+            break;
+        case 12:
+            if(keep_parking && !parking_once2) {
+                keep_parking = false;
+                parking_once1 = true;
+                count_parking = 0;
+            }
+            if (parking_flag) {
+                if (!keep_parking) {
+                
+                    keep_parking = true;
+                }
+            }
+            else {
+                // steer_command = cam_steer;
+                steer_command = -0.03;
+                speed_command = speed8;
+            }
+            if (keep_parking) {
+                if (count_parking < count1) {      // 피팅 필요
+                    steer_command = steer1;
+                    speed_command = speed1;
+                    count_parking++;
+                } else if (count_parking >= count1 && count_parking < count2) {
+                    steer_command = steer2;
+                    speed_command = speed2;
+                    count_parking++;
+                } else if (count_parking >= count2 && count_parking < count3) {
+                    steer_command = steer3;
+                    speed_command = speed3;
+                    count_parking++;
+                } else if (count_parking >= count3 && count_parking < count4) {
+                    steer_command = steer4;
+                    speed_command = speed4;
+                    count_parking++;
+                }
+                else if (count_parking >= count4 && count_parking < count5) {
+                    steer_command = steer5;
+                    speed_command = speed5;
+                    count_parking++;
+                }
+                else if (count_parking >= count5 && count_parking < count6) {
+                    steer_command = steer6;
+                    speed_command = speed6;
+                    count_parking++;
+                }
+                else if (count_parking >= count6 && count_parking < count7) {
+                    steer_command = steer7;
+                    speed_command = speed7;
+                }
+                else if (count_parking >= count7 && count_parking < count11) {
+                    steer_command = steer11;
+                    speed_command = speed11;
+                    count_parking++;
+                }
+                else if (count_parking >= count11 && count_parking < count12) {
+                    steer_command = steer12;
+                    speed_command = speed12;
+                    count_parking++;
+                }
+                
+                
+            }
+            
+            
+            break;
+        case 13:
+            if(keep_parking && !parking_once3) {
+                keep_parking = false;
+                parking_once1 = true;
+                count_parking = 0;
+            }
+            if (parking_flag) {
+                if (!keep_parking) {
+                
+                    keep_parking = true;
+                }
+            }
+            else {
+                // steer_command = cam_steer;
+                steer_command = -0.03;
+                speed_command = speed8;
+            }
+            if (keep_parking) {
+                if (count_parking < count1) {      // 피팅 필요
+                    steer_command = steer1;
+                    speed_command = speed1;
+                    count_parking++;
+                } else if (count_parking >= count1 && count_parking < count2) {
+                    steer_command = steer2;
+                    speed_command = speed2;
+                    count_parking++;
+                } else if (count_parking >= count2 && count_parking < count3) {
+                    steer_command = steer3;
+                    speed_command = speed3;
+                    count_parking++;
+                } else if (count_parking >= count3 && count_parking < count4) {
+                    steer_command = steer4;
+                    speed_command = speed4;
+                    count_parking++;
+                }
+                else if (count_parking >= count4 && count_parking < count5) {
+                    steer_command = steer5;
+                    speed_command = speed5;
+                    count_parking++;
+                }
+                else if (count_parking >= count5 && count_parking < count6) {
+                    steer_command = steer6;
+                    speed_command = speed6;
+                    count_parking++;
+                }
+                else if (count_parking >= count6 && count_parking < count7) {
+                    steer_command = steer7;
+                    speed_command = speed7;
+                }
+                else if (count_parking >= count7 && count_parking < count11) {
+                    steer_command = steer11;
+                    speed_command = speed11;
+                    count_parking++;
+                }
+                else if (count_parking >= count11 && count_parking < count12) {
+                    steer_command = steer12;
+                    speed_command = speed12;
+                    count_parking++;
+                }
+                
+                
+            }
+            
+            
+            break;
+        case 14:
+            if(keep_parking && !parking_once4) {
+                keep_parking = false;
+                parking_once1 = true;
+                count_parking = 0;
+            }
+            if (parking_flag) {
+                if (!keep_parking) {
+                
+                    keep_parking = true;
+                }
+            }
+            else {
+                // steer_command = cam_steer;
+                steer_command = -0.03;
+                speed_command = speed8;
+            }
+            if (keep_parking) {
+                if (count_parking < count1) {      // 피팅 필요
+                    steer_command = steer1;
+                    speed_command = speed1;
+                    count_parking++;
+                } else if (count_parking >= count1 && count_parking < count2) {
+                    steer_command = steer2;
+                    speed_command = speed2;
+                    count_parking++;
+                } else if (count_parking >= count2 && count_parking < count3) {
+                    steer_command = steer3;
+                    speed_command = speed3;
+                    count_parking++;
+                } else if (count_parking >= count3 && count_parking < count4) {
+                    steer_command = steer4;
+                    speed_command = speed4;
+                    count_parking++;
+                }
+                else if (count_parking >= count4 && count_parking < count5) {
+                    steer_command = steer5;
+                    speed_command = speed5;
+                    count_parking++;
+                }
+                else if (count_parking >= count5 && count_parking < count6) {
+                    steer_command = steer6;
+                    speed_command = speed6;
+                    count_parking++;
+                }
+                else if (count_parking >= count6 && count_parking < count7) {
+                    steer_command = steer7;
+                    speed_command = speed7;
+                }
+                else if (count_parking >= count7 && count_parking < count11) {
+                    steer_command = steer11;
+                    speed_command = speed11;
+                    count_parking++;
+                }
+                else if (count_parking >= count11 && count_parking < count12) {
+                    steer_command = steer12;
+                    speed_command = speed12;
+                    count_parking++;
+                }
+                
+                
+            }
+            
+            
+            break;
+        case 15:
+            if(keep_parking && !parking_once5) {
+                keep_parking = false;
+                parking_once1 = true;
+                count_parking = 0;
+            }
+            if (parking_flag) {
+                if (!keep_parking) {
+                
+                    keep_parking = true;
+                }
+            }
+            else {
+                // steer_command = cam_steer;
+                steer_command = -0.03;
+                speed_command = speed8;
+            }
+            if (keep_parking) {
+                if (count_parking < count1) {      // 피팅 필요
+                    steer_command = steer1;
+                    speed_command = speed1;
+                    count_parking++;
+                } else if (count_parking >= count1 && count_parking < count2) {
+                    steer_command = steer2;
+                    speed_command = speed2;
+                    count_parking++;
+                } else if (count_parking >= count2 && count_parking < count3) {
+                    steer_command = steer3;
+                    speed_command = speed3;
+                    count_parking++;
+                } else if (count_parking >= count3 && count_parking < count4) {
+                    steer_command = steer4;
+                    speed_command = speed4;
+                    count_parking++;
+                }
+                else if (count_parking >= count4 && count_parking < count5) {
+                    steer_command = steer5;
+                    speed_command = speed5;
+                    count_parking++;
+                }
+                else if (count_parking >= count5 && count_parking < count6) {
+                    steer_command = steer6;
+                    speed_command = speed6;
+                    count_parking++;
+                }
+                else if (count_parking >= count6 && count_parking < count7) {
+                    steer_command = steer7;
+                    speed_command = speed7;
+                }
+                else if (count_parking >= count7 && count_parking < count11) {
+                    steer_command = steer11;
+                    speed_command = speed11;
+                    count_parking++;
+                }
+                else if (count_parking >= count11 && count_parking < count12) {
+                    steer_command = steer12;
+                    speed_command = speed12;
+                    count_parking++;
+                }
+                
+                
+            }
+            
+            
+            break;
+        case 16:
+            if(keep_parking && !parking_once6) {
+                keep_parking = false;
+                parking_once1 = true;
+                count_parking = 0;
+            }
+            if (parking_flag) {
+                if (!keep_parking) {
+                
+                    keep_parking = true;
+                }
+            }
+            else {
+                // steer_command = cam_steer;
+                steer_command = -0.03;
+                speed_command = speed8;
+            }
+            if (keep_parking) {
+                if (count_parking < count1) {      // 피팅 필요
+                    steer_command = steer1;
+                    speed_command = speed1;
+                    count_parking++;
+                } else if (count_parking >= count1 && count_parking < count2) {
+                    steer_command = steer2;
+                    speed_command = speed2;
+                    count_parking++;
+                } else if (count_parking >= count2 && count_parking < count3) {
+                    steer_command = steer3;
+                    speed_command = speed3;
+                    count_parking++;
+                } else if (count_parking >= count3 && count_parking < count4) {
+                    steer_command = steer4;
+                    speed_command = speed4;
+                    count_parking++;
+                }
+                else if (count_parking >= count4 && count_parking < count5) {
+                    steer_command = steer5;
+                    speed_command = speed5;
+                    count_parking++;
+                }
+                else if (count_parking >= count5 && count_parking < count6) {
+                    steer_command = steer6;
+                    speed_command = speed6;
+                    count_parking++;
+                }
+                else if (count_parking >= count6 && count_parking < count7) {
+                    steer_command = steer7;
+                    speed_command = speed7;
+                }
+                else if (count_parking >= count7 && count_parking < count11) {
+                    steer_command = steer11;
+                    speed_command = speed11;
+                    count_parking++;
+                }
+                else if (count_parking >= count11 && count_parking < count12) {
+                    steer_command = steer12;
+                    speed_command = speed12;
+                    count_parking++;
+                }
+                
+                
+            }
+            
+            
+            break;
+
+        case 17:
+            if(keep_parking && !parking_once7) {
+                keep_parking = false;
+                parking_once1 = true;
+                count_parking = 0;
+            }
+            if (parking_flag) {
+                if (!keep_parking) {
+                
+                    keep_parking = true;
+                }
+            }
+            else {
+                // steer_command = cam_steer;
+                steer_command = -0.03;
+                speed_command = speed8;
+            }
+            if (keep_parking) {
+                if (count_parking < count1) {      // 피팅 필요
+                    steer_command = steer1;
+                    speed_command = speed1;
+                    count_parking++;
+                } else if (count_parking >= count1 && count_parking < count2) {
+                    steer_command = steer2;
+                    speed_command = speed2;
+                    count_parking++;
+                } else if (count_parking >= count2 && count_parking < count3) {
+                    steer_command = steer3;
+                    speed_command = speed3;
+                    count_parking++;
+                } else if (count_parking >= count3 && count_parking < count4) {
+                    steer_command = steer4;
+                    speed_command = speed4;
+                    count_parking++;
+                }
+                else if (count_parking >= count4 && count_parking < count5) {
+                    steer_command = steer5;
+                    speed_command = speed5;
+                    count_parking++;
+                }
+                else if (count_parking >= count5 && count_parking < count6) {
+                    steer_command = steer6;
+                    speed_command = speed6;
+                    count_parking++;
+                }
+                else if (count_parking >= count6 && count_parking < count7) {
+                    steer_command = steer7;
+                    speed_command = speed7;
+                }
+                else if (count_parking >= count7 && count_parking < count11) {
+                    steer_command = steer11;
+                    speed_command = speed11;
+                    count_parking++;
+                }
+                else if (count_parking >= count11 && count_parking < count12) {
+                    steer_command = steer12;
+                    speed_command = speed12;
+                    count_parking++;
+                }
+                
+                
+            }
+            
+            
+            break;
+        case 18:
+            if(keep_parking && !parking_once8) {
+                keep_parking = false;
+                parking_once1 = true;
+                count_parking = 0;
+            }
+            if (parking_flag) {
+                if (!keep_parking) {
+                
+                    keep_parking = true;
+                }
+            }
+            else {
+                // steer_command = cam_steer;
+                steer_command = -0.03;
+                speed_command = speed8;
+            }
+            if (keep_parking) {
+                if (count_parking < count1) {      // 피팅 필요
+                    steer_command = steer1;
+                    speed_command = speed1;
+                    count_parking++;
+                } else if (count_parking >= count1 && count_parking < count2) {
+                    steer_command = steer2;
+                    speed_command = speed2;
+                    count_parking++;
+                } else if (count_parking >= count2 && count_parking < count3) {
+                    steer_command = steer3;
+                    speed_command = speed3;
+                    count_parking++;
+                } else if (count_parking >= count3 && count_parking < count4) {
+                    steer_command = steer4;
+                    speed_command = speed4;
+                    count_parking++;
+                }
+                else if (count_parking >= count4 && count_parking < count5) {
+                    steer_command = steer5;
+                    speed_command = speed5;
+                    count_parking++;
+                }
+                else if (count_parking >= count5 && count_parking < count6) {
+                    steer_command = steer6;
+                    speed_command = speed6;
+                    count_parking++;
+                }
+                else if (count_parking >= count6 && count_parking < count7) {
+                    steer_command = steer7;
+                    speed_command = speed7;
+                }
+                else if (count_parking >= count7 && count_parking < count11) {
+                    steer_command = steer11;
+                    speed_command = speed11;
+                    count_parking++;
+                }
+                else if (count_parking >= count11 && count_parking < count12) {
+                    steer_command = steer12;
+                    speed_command = speed12;
+                    count_parking++;
+                }
+                
+                
+            }
+            
+            
+            break;
+        case 19:
+            if(keep_parking && !parking_once9) {
+                keep_parking = false;
+                parking_once1 = true;
+                count_parking = 0;
+            }
+            if (parking_flag) {
+                if (!keep_parking) {
+                
+                    keep_parking = true;
+                }
+            }
+            else {
+                // steer_command = cam_steer;
+                steer_command = -0.03;
+                speed_command = speed8;
+            }
+            if (keep_parking) {
+                if (count_parking < count1) {      // 피팅 필요
+                    steer_command = steer1;
+                    speed_command = speed1;
+                    count_parking++;
+                } else if (count_parking >= count1 && count_parking < count2) {
+                    steer_command = steer2;
+                    speed_command = speed2;
+                    count_parking++;
+                } else if (count_parking >= count2 && count_parking < count3) {
+                    steer_command = steer3;
+                    speed_command = speed3;
+                    count_parking++;
+                } else if (count_parking >= count3 && count_parking < count4) {
+                    steer_command = steer4;
+                    speed_command = speed4;
+                    count_parking++;
+                }
+                else if (count_parking >= count4 && count_parking < count5) {
+                    steer_command = steer5;
+                    speed_command = speed5;
+                    count_parking++;
+                }
+                else if (count_parking >= count5 && count_parking < count6) {
+                    steer_command = steer6;
+                    speed_command = speed6;
+                    count_parking++;
+                }
+                else if (count_parking >= count6 && count_parking < count7) {
+                    steer_command = steer7;
+                    speed_command = speed7;
+                }
+                else if (count_parking >= count7 && count_parking < count11) {
+                    steer_command = steer11;
+                    speed_command = speed11;
+                    count_parking++;
+                }
+                else if (count_parking >= count11 && count_parking < count12) {
+                    steer_command = steer12;
+                    speed_command = speed12;
+                    count_parking++;
+                }
+                
+                
+            }
+            
+            
+            break;
+        case 20:
+            if(keep_parking && !parking_once10) {
+                keep_parking = false;
+                parking_once1 = true;
+                count_parking = 0;
+            }
+            if (parking_flag) {
+                if (!keep_parking) {
+                
+                    keep_parking = true;
+                }
+            }
+            else {
+                // steer_command = cam_steer;
+                steer_command = -0.03;
+                speed_command = speed8;
+            }
+            if (keep_parking) {
+                if (count_parking < count1) {      // 피팅 필요
+                    steer_command = steer1;
+                    speed_command = speed1;
+                    count_parking++;
+                } else if (count_parking >= count1 && count_parking < count2) {
+                    steer_command = steer2;
+                    speed_command = speed2;
+                    count_parking++;
+                } else if (count_parking >= count2 && count_parking < count3) {
+                    steer_command = steer3;
+                    speed_command = speed3;
+                    count_parking++;
+                } else if (count_parking >= count3 && count_parking < count4) {
+                    steer_command = steer4;
+                    speed_command = speed4;
+                    count_parking++;
+                }
+                else if (count_parking >= count4 && count_parking < count5) {
+                    steer_command = steer5;
+                    speed_command = speed5;
+                    count_parking++;
+                }
+                else if (count_parking >= count5 && count_parking < count6) {
+                    steer_command = steer6;
+                    speed_command = speed6;
+                    count_parking++;
+                }
+                else if (count_parking >= count6 && count_parking < count7) {
+                    steer_command = steer7;
+                    speed_command = speed7;
+                }
+                else if (count_parking >= count7 && count_parking < count11) {
+                    steer_command = steer11;
+                    speed_command = speed11;
+                    count_parking++;
+                }
+                else if (count_parking >= count11 && count_parking < count12) {
+                    steer_command = steer12;
+                    speed_command = speed12;
+                    count_parking++;
+                }
+                
+                
+            }
+            
+            
+            break;
         default:
             // Keep the most recent camera command when mission_state is unknown
             break;

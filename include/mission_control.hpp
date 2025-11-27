@@ -36,6 +36,17 @@ private:
     bool cam_red_detection = false;
     bool cam_blue_detection = false;
 
+    bool parking_once1 = false;
+    bool parking_once2 = false;
+    bool parking_once3 = false;
+    bool parking_once4 = false;
+    bool parking_once5 = false;
+    bool parking_once6 = false;
+    bool parking_once7 = false;
+    bool parking_once8 = false;
+    bool parking_once9 = false;
+    bool parking_once10 = false;
+
     double steer1 = 0.0;
     double steer2 = 0.0;
     double steer3 = 0.0;
